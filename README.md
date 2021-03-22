@@ -4,11 +4,15 @@
 
 # 💡 Minimalistic Help Center hosted on GitHub Pages
 
-This is a minimalistic responsive Help Center that is entirely hosted on GitHub pages. It
-does not need the maintenance of any servers or databases and can be hosted
-entirely on ❤️ GitHub for free!
+This is a minimalistic responsive Help Center hosted on GitHub pages. It does not need the maintenance of any servers or databases and can be hosted entirely on ❤️ GitHub for free!
 
-Includes a few simple dependencies like [Fuse.js](https://fusejs.io/) for better fuzzy search and [Showdown](https://github.com/showdownjs/showdown) to convert
-markdown to html.
+Includes a very few dependencies:
 
-Inspired by [Githu Pages URL shortener](https://github.com/nelsontky/gh-pages-url-shortener/)
+-   [Fuse.js](https://fusejs.io/) for better fuzzy search
+-   [Showdown](https://github.com/showdownjs/showdown) to convert
+    markdown to HTML
+-   Beatiful font [Inter](https://github.com/rsms/inter)
+
+Feel free to customize by visual identity of your preference .)
+
+Inspired by [Githu Pages URL shortener](https://github.com/nelsontky/gh-pages-url-shortener/).
