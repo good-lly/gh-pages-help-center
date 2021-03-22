@@ -14,5 +14,6 @@ Includes a very few dependencies:
 -   Beatiful font [Inter](https://github.com/rsms/inter)
 
 Feel free to customize by visual identity of your preference .)
+To update `<head>` of your Help Center is recommended to follow [HEAD - A list of everything that _could_ go in the head of your document ](https://github.com/joshbuchea/HEAD)
 
 Inspired by [Githu Pages URL shortener](https://github.com/nelsontky/gh-pages-url-shortener/).
