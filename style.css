@@ -1,6 +1,8 @@
+/* RESET */
 html {
     box-sizing: border-box;
     font-size: 16px;
+    font-family: var(--f-default-family);
 }
 
 *,
@@ -12,7 +14,8 @@ html {
 body {
     min-height: 100vh;
     scroll-behavior: smooth;
-    text-rendering: optimizeSpeed;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
     line-height: 1.5;
 }
 
@@ -35,6 +38,16 @@ ul {
     font-weight: normal;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 700;
+    font-family: var(--f-headline-family);
+}
+
 ol,
 ul {
     list-style: none;
@@ -43,6 +56,17 @@ ul {
 img {
     max-width: 100%;
     height: auto;
+}
+
+input[type='search'] {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+input[type='search'] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -54,4 +78,166 @@ img {
     }
 }
 
-/* END OF SIMPLE RESET */
+/* END OF RESET */
+
+/* START OF VERY SIMPLE GRID LAYOUT */
+
+.container {
+    padding: 0 1rem;
+    margin: 0 auto;
+}
+@media screen and (min-width: 992px) {
+    .container {
+        max-width: 1200px;
+    }
+    .grid-wrapper {
+        display: grid;
+        grid-gap: 0 2rem;
+        grid-template-columns: repeat(12, 1fr);
+        margin: 0 auto;
+        width: 100%;
+    }
+    .col-1 {
+        grid-column: span 1;
+    }
+    .col-2 {
+        grid-column: span 2;
+    }
+    .col-3 {
+        grid-column: span 3;
+    }
+    .col-4 {
+        grid-column: span 4;
+    }
+    .col-5 {
+        grid-column: span 5;
+    }
+    .col-6 {
+        grid-column: span 6;
+    }
+    .col-7 {
+        grid-column: span 7;
+    }
+    .col-8 {
+        grid-column: span 8;
+    }
+    .col-9 {
+        grid-column: span 9;
+    }
+    .col-10 {
+        grid-column: span 10;
+    }
+    .col-11 {
+        grid-column: span 11;
+    }
+    .col-12 {
+        grid-column: span 12;
+    }
+}
+
+/* END OF SIMPLE GRID LAYOUT  */
+
+.topnav {
+    width: 100%;
+    background-color: var(--c-nav-bg);
+    color: var(--c-nav-font);
+    position: relative;
+    z-index: 2;
+}
+.topnav a {
+    display: inline-block;
+    color: var(--c-nav-font);
+    padding: 10px 0 10px 0;
+    text-decoration: none;
+}
+.search {
+    max-width: 100%;
+    display: block;
+    position: relative;
+    padding: 10px 0 20px 0;
+    background: -moz-linear-gradient(
+        125deg,
+        rgba(245, 142, 101, 1) 10%,
+        rgba(113, 71, 155, 1) 70%,
+        rgba(4, 40, 142, 1) 150%
+    );
+    background: -webkit-linear-gradient(
+        125deg,
+        rgba(245, 142, 101, 1) 10%,
+        rgba(113, 71, 155, 1) 70%,
+        rgba(4, 40, 142, 1) 150%
+    );
+    background: linear-gradient(
+        125deg,
+        rgba(245, 142, 101, 1) 10%,
+        rgba(113, 71, 155, 1) 70%,
+        rgba(4, 40, 142, 1) 150%
+    );
+    overflow-x: hidden;
+    box-shadow: rgb(127, 130, 133) 0px 0px 10px;
+    z-index: 1;
+}
+.search h1 {
+    font-size: 2rem;
+    color: var(--c-search-headline);
+    opacity: 0.9;
+    padding: 0;
+}
+@media screen and (min-width: 992px) {
+    .search h1 {
+        font-size: 3.4rem;
+        padding: 1rem 0 0.4rem 0;
+    }
+}
+.search-bar:focus {
+    outline: none;
+}
+.search-bar {
+    padding: 0;
+    font-size: 2rem;
+    width: auto;
+    padding: 0;
+    font-weight: 700;
+    border: none;
+    background: transparent;
+    color: var(--c-search-text);
+    background-image: url('./search.svg');
+    background-size: 9rem;
+    background-position: 0px 6px;
+    background-repeat: no-repeat;
+    padding-left: 2.4rem;
+}
+@media screen and (min-width: 992px) {
+    .search-bar {
+        font-size: 4rem;
+        padding-left: 5rem;
+        margin-bottom: 1rem;
+        background-image: url('./search.svg');
+        background-size: 20rem;
+        background-position: 0px 10px;
+        background-repeat: no-repeat;
+    }
+}
+.search-bar::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--c-search-placeholder);
+    opacity: 0.6; /* Firefox */
+}
+
+.search-bar:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: var(--c-search-placeholder);
+    opacity: 0.6;
+}
+
+.search-bar::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: var(--c-search-placeholder);
+    opacity: 0.6;
+}
+.content h3 {
+    font-size: 1.5rem;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    opacity: 0.8;
+}

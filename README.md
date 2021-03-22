@@ -4,7 +4,7 @@
 
 # 💡 Minimalistic Help Center hosted on GitHub Pages
 
-This is a minimalistic responsive Help Center hosted on GitHub pages. It does not need the maintenance of any servers or databases and can be hosted entirely on ❤️ GitHub for free!
+This is a minimalistic responsive Help Center hosted on GitHub pages written in vanilla JS. It does not need the maintenance of any servers or databases and can be hosted entirely on ❤️ GitHub for free!
 
 Includes a very few dependencies:
 

@@ -1,13 +1,120 @@
 <!DOCTYPE html>
+<!--[if lt IE 7]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
 <html lang="en">
+    <!--<![endif]-->
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Help Center | We are here to help!</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="robots" content="index,follow" />
+        <title>💡 Help Center | We are here to help!</title>
+        <meta name="HandheldFriendly" content="True" />
+        <meta name="MobileOptimized" content="350" />
+        <meta name="msapplication-TileColor" content="#000000" />
+        <meta name="theme-color" content="#000000" />
+        <!-- customize this visual settings -->
+        <style>
+            @font-face {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-display: swap;
+                src: url('Inter-Bold.woff2?v=3.15') format('woff2'),
+                    url('Inter-Bold.woff?v=3.15') format('woff');
+            }
+            :root {
+                --f-default-family: -apple-system, BlinkMacSystemFont,
+                    'Segoe UI', Helvetica, Arial, sans-serif,
+                    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+                --f-headline-family: 'Inter', sans-serif;
+                --c-nav-bg: #111111;
+                --c-nav-font: #ffffff;
+                --c-search-headline: #ffffff;
+                --c-search-placeholder: #ffffff;
+                --c-search-text: #4043c1;
+            }
+        </style>
         <link rel="stylesheet" href="style.css" />
         <script src="script.js"></script>
     </head>
     <body>
-        <!-- page content -->
+        <div class="topnav">
+            <div class="container">
+                <div class="col-12">
+                    <a href="#home">Your Branding</a>
+                </div>
+            </div>
+        </div>
+        <div class="search">
+            <div class="container">
+                <div class="col-12"><h1>Help Center</h1></div>
+                <div class="col-12">
+                    <form action="#" id="search-form">
+                        <input
+                            type="text"
+                            id="js-search"
+                            maxlength="30"
+                            class="search-bar"
+                            placeholder="How can we help?"
+                            aria-label="Search"
+                            autocomplete="off"
+                        />
+                    </form>
+                </div>
+                <div class="col-12 results"></div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="grid-wrapper content">
+                <div class="col-4">
+                    <h3>Popular</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Cras suscipit ultricies vehicula. Curabitur iaculis,
+                        risus vel egestas pellentesque, magna eros fermentum
+                        massa, et eleifend sapien purus id dui. Pellentesque
+                        consectetur imperdiet dui ac tristique. Nulla non
+                        egestas dui. Nulla semper diam est. Morbi tincidunt eros
+                        non nisi pretium vehicula. Integer semper vulputate sem
+                        eu molestie. Fusce aliquet viverra est, sit amet blandit
+                        nibh tristique commodo. Nulla eget elit in lacus luctus
+                        iaculis et in ipsum. Curabitur et consectetur sapien.
+                    </p>
+                </div>
+                <div class="col-4">
+                    <h3>Recent</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Cras suscipit ultricies vehicula. Curabitur iaculis,
+                        risus vel egestas pellentesque, magna eros fermentum
+                        massa, et eleifend sapien purus id dui. Pellentesque
+                        consectetur imperdiet dui ac tristique. Nulla non
+                        egestas dui. Nulla semper diam est. Morbi tincidunt eros
+                        non nisi pretium vehicula. Integer semper vulputate sem
+                        eu molestie. Fusce aliquet viverra est, sit amet blandit
+                        nibh tristique commodo. Nulla eget elit in lacus luctus
+                        iaculis et in ipsum. Curabitur et consectetur sapien.
+                    </p>
+                </div>
+                <div class="col-4">
+                    <h3>Shipping</h3>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Cras suscipit ultricies vehicula. Curabitur iaculis,
+                        risus vel egestas pellentesque, magna eros fermentum
+                        massa, et eleifend sapien purus id dui. Pellentesque
+                        consectetur imperdiet dui ac tristique. Nulla non
+                        egestas dui. Nulla semper diam est. Morbi tincidunt eros
+                        non nisi pretium vehicula. Integer semper vulputate sem
+                        eu molestie. Fusce aliquet viverra est, sit amet blandit
+                        nibh tristique commodo. Nulla eget elit in lacus luctus
+                        iaculis et in ipsum. Curabitur et consectetur sapien.
+                    </p>
+                </div>
+            </div>
+        </div>
     </body>
 </html>
