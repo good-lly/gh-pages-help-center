@@ -221,6 +221,7 @@ var renderBoxContent = function (id) {
     if (elmPage == 0) {
         while (elm.firstChild) elm.removeChild(elm.firstChild);
     }
+    if (elmPage === 'max') return;
     // filter and prepare entries
     if (~elmLabels.indexOf(ALL_LABEL) || elmLabels[0] == '') {
         var tempArr = JSON.parse(JSON.stringify(allIssues));
@@ -275,7 +276,28 @@ var renderBoxContent = function (id) {
             '</a>';
     }
     elm.insertAdjacentHTML('beforeend', resultHtml);
-    var showMoreBtn = tempArr.slice(to, to + 1).length === 1;
+
+    var shouldShowMoreBtn = tempArr.slice(to, to + 1).length === 1;
+    shouldShowMoreBtn
+        ? elm.setAttribute(dataPageName, parseInt(elmPage) + 1)
+        : elm.setAttribute(dataPageName, 'max');
+    var buttonId = 'show-more' + id;
+    var showMoreBtn = document.getElementById(buttonId);
+    if (shouldShowMoreBtn) {
+        if (typeof showMoreBtn === 'undefined' || showMoreBtn == null) {
+            var textBtn =
+                '<span class="show-more" id=' +
+                buttonId +
+                ' onClick="renderBoxContent(\'' +
+                id +
+                '\'); return false;">Show More</span>';
+            elm.insertAdjacentHTML('afterend', textBtn);
+        }
+    } else {
+        if (typeof showMoreBtn !== 'undefined' && showMoreBtn != null) {
+            showMoreBtn.remove();
+        }
+    }
 };
 
 var openModal = function () {
