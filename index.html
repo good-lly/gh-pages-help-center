@@ -37,6 +37,16 @@
                 --c-search-text: #4043c1;
             }
         </style>
+        <script>
+            var GITHUB_ISSUES_LINK =
+                'https://api.github.com/repos/sentienhq/Sentien-FAQ-db/issues';
+            var GITHUB_ACCEPTED_EDITORS = ['good_lly'];
+            var GITHUB_ACCEPTED_LABELS = ['approved'];
+            var UNCATEGORIZED_LABEL = 'uncategorized-*';
+            var ALL_LABEL = 'all-*';
+            var MAX_PAGES = 20;
+            var NUM_RESULTS_PER_PAGE = 30;
+        </script>
         <link rel="stylesheet" href="style.css" />
         <script src="script.js"></script>
     </head>
@@ -71,33 +81,19 @@
             <div class="grid-wrapper content">
                 <div class="col-4">
                     <h3>Popular</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Cras suscipit ultricies vehicula. Curabitur iaculis,
-                        risus vel egestas pellentesque, magna eros fermentum
-                        massa, et eleifend sapien purus id dui. Pellentesque
-                        consectetur imperdiet dui ac tristique. Nulla non
-                        egestas dui. Nulla semper diam est. Morbi tincidunt eros
-                        non nisi pretium vehicula. Integer semper vulputate sem
-                        eu molestie. Fusce aliquet viverra est, sit amet blandit
-                        nibh tristique commodo. Nulla eget elit in lacus luctus
-                        iaculis et in ipsum. Curabitur et consectetur sapien.
-                    </p>
+                    <div
+                        class="content-box"
+                        data-label="popular"
+                        data-order="newest"
+                    ></div>
                 </div>
                 <div class="col-4">
                     <h3>Recent</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Cras suscipit ultricies vehicula. Curabitur iaculis,
-                        risus vel egestas pellentesque, magna eros fermentum
-                        massa, et eleifend sapien purus id dui. Pellentesque
-                        consectetur imperdiet dui ac tristique. Nulla non
-                        egestas dui. Nulla semper diam est. Morbi tincidunt eros
-                        non nisi pretium vehicula. Integer semper vulputate sem
-                        eu molestie. Fusce aliquet viverra est, sit amet blandit
-                        nibh tristique commodo. Nulla eget elit in lacus luctus
-                        iaculis et in ipsum. Curabitur et consectetur sapien.
-                    </p>
+                    <div
+                        class="content-box"
+                        data-label="kickstarter popular"
+                        data-order="oldest"
+                    ></div>
                 </div>
                 <div class="col-4">
                     <h3>Shipping</h3>

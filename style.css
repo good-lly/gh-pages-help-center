@@ -183,7 +183,7 @@ input[type='search'] {
     position: fixed;
     top: 0;
     z-index: 1;
-    padding: 5px 0 5px 0;
+    padding: 10px 0 10px 0;
 }
 .search.sticky h1 {
     transform: translateY(-100%);
@@ -262,5 +262,12 @@ input[type='search'] {
     font-size: 1.5rem;
     padding-top: 20px;
     padding-bottom: 10px;
-    opacity: 0.8;
+    opacity: 0.7;
+}
+@media screen and (min-width: 992px) {
+    .content h3 {
+        font-size: 1.9rem;
+        padding-top: 35px;
+        padding-bottom: 15px;
+    }
 }
