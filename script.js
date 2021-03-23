@@ -1,10 +1,14 @@
 // Usage constants are defined in the head of index document
-// GITHUB_ISSUES_LINK
-// NUM_RESULTS_PER_PAGE
-// MAX_PAGES
-// GITHUB_ACCEPTED_LABELS
-// GITHUB_ACCEPTED_CREATORS
-// ENTRIES_PER_VIEW
+//
+// DEFAULT VALUES IN INDEX
+// var GITHUB_ISSUES_LINK = 'https://api.github.com/repos/sentienhq/Sentien-FAQ-db/issues';
+// var GITHUB_ACCEPTED_CREATORS = ['good_lly'];
+// var GITHUB_ACCEPTED_LABELS = ['approved'];
+// var UNCATEGORIZED_LABEL = 'restUncategorizedEntries';
+// var ALL_LABEL = 'allEntries';
+// var ENTRIES_PER_VIEW = 5;
+// var MAX_PAGES = 40;
+// var NUM_RESULTS_PER_PAGE = 30;
 
 var stickyClass = 'sticky';
 var dataLabelName = 'data-label';

@@ -54,12 +54,19 @@
                     rgba(4, 40, 142, 1) 150%
                 );
                 --c-search-bg-fallback: rgb(245, 142, 101);
+                --c-show-more-text: #111;
+                --c-show-more-text-hover: blue;
+                --c-box-bg: #efefef;
+                --c-box-bg-hover: rgba(0, 0, 0, 0.1);
+                --c-box-text: #111;
+                --c-footer-bg: rgba(10, 10, 10, 0.1);
+                --c-footer-text: black;
             }
         </style>
         <script>
             var GITHUB_ISSUES_LINK =
                 'https://api.github.com/repos/sentienhq/Sentien-FAQ-db/issues';
-            var GITHUB_ACCEPTED_CREATORS = ['good_lly', 'sarakuperminc'];
+            var GITHUB_ACCEPTED_CREATORS = ['sarakuperminc'];
             var GITHUB_ACCEPTED_LABELS = ['approved'];
             var UNCATEGORIZED_LABEL = 'restUncategorizedEntries';
             var ALL_LABEL = 'allEntries';
@@ -126,6 +133,15 @@
                         data-order="oldest"
                     ></div>
                 </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="container">
+                <div class="col-6">
+                    <span>Your Branding COPYRIGHT 2020</span>
+                </div>
+                <div class="col-6"></div>
             </div>
         </div>
         <div class="overlay" id="js-overlay"></div>

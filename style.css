@@ -316,11 +316,11 @@ input[type='search'] {
     font-stretch: normal;
     letter-spacing: -0.1px;
     text-decoration: none;
-    color: #111;
+    color: var(--c-box-text);
     letter-spacing: -0.5px;
     font-size: 1.1rem;
     line-height: 1.4em;
-    background: #efefef;
+    background: var(--c-box-bg);
     padding: 15px;
     max-width: 100%;
     -webkit-border-radius: 1.2rem;
@@ -367,9 +367,23 @@ input[type='search'] {
     opacity: 0.8;
 }
 .content-box a:hover {
-    background: rgba(0, 0, 0, 0.1);
+    background: var(--c-box-bg-hover);
     -webkit-transform: scale(1.02);
     transform: scale(1.02);
+}
+
+.show-more {
+    display: inline-block;
+    cursor: pointer;
+    font-weight: bold;
+    color: var(--c-show-more-text);
+    padding: 10px;
+    font-size: 0.9rem;
+    margin: 0 0 10px 10px;
+    text-transform: uppercase;
+}
+.show-more:hover {
+    color: var(--c-show-more-text-hover);
 }
 
 .modal {
@@ -465,4 +479,10 @@ input[type='search'] {
 .overlay.open {
     width: 100%;
     opacity: 1;
+}
+.footer {
+    background: var(--c-footer-bg);
+    color: var(--c-footer-text);
+    padding-top: 30px;
+    padding-bottom: 30px;
 }
