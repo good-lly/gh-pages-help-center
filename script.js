@@ -4,6 +4,7 @@
 // MAX_PAGES
 // GITHUB_ACCEPTED_LABELS
 // GITHUB_ACCEPTED_CREATORS
+// ENTRIES_PER_VIEW
 
 var stickyClass = 'sticky';
 var dataLabelName = 'data-label';
@@ -14,6 +15,7 @@ var dataOrderNameOldest = 'oldest';
 var contentBoxClassName = 'content-box';
 var searchIdName = 'js-search';
 var searchBarName = 'js-search-bar';
+var contentName = 'js-content';
 var page = 1;
 var allLabels = [];
 var allIssues = [];
@@ -48,6 +50,12 @@ var fetchPage = function () {
                 fetchPage();
             } else {
                 appendLabelClassesStyle();
+                console.log('allIssues', allIssues);
+                var elms = document.getElementsByClassName(contentBoxClassName);
+                for (m = 0; m < elms.length; m++) {
+                    var id = elms[m].getAttribute('id');
+                    renderBoxContent(id);
+                }
             }
         } catch (e) {
             console.error(e);
@@ -86,7 +94,7 @@ var ready = function () {
     var search = document.getElementById(searchIdName);
     var searchbar = document.getElementById(searchBarName);
     var elms = document.getElementsByClassName(contentBoxClassName);
-    var sticky = searchbar.offsetHeight;
+    var sticky = searchbar.offsetHeight + 50;
     for (k = 0; k < elms.length; k++) {
         var id = elms[k].getAttribute('id');
         if (id === null) {
@@ -98,7 +106,7 @@ var ready = function () {
         }
         var pageNum = elms[k].getAttribute(dataPageName);
         if (pageNum === null) {
-            elms[k].setAttribute(dataPageName, 1);
+            elms[k].setAttribute(dataPageName, 0);
         }
     }
     fetchPage();
@@ -119,6 +127,76 @@ var getRandomInt = function (min, max) {
     min = Math.ceil(min);
     max = Math.floor(max);
     return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+var renderBoxContent = function (id) {
+    var tempArr = [];
+    var elm = document.getElementById(id);
+    var elmLabels = elm.getAttribute(dataLabelName).split(' ');
+    var elmOrder = elm.getAttribute(dataOrderName);
+    var elmPage = elm.getAttribute(dataPageName);
+    console.log('render id ', id, elmLabels);
+
+    // clear box - remove skeletons
+    if (elmPage == 0) {
+        while (elm.firstChild) elm.removeChild(elm.firstChild);
+    }
+    // filter and prepare entries
+    if (~elmLabels.indexOf(ALL_LABEL) || elmLabels[0] == '') {
+        var tempArr = JSON.parse(JSON.stringify(allIssues));
+    } else if (~elmLabels.indexOf(UNCATEGORIZED_LABEL)) {
+        for (n = 0; n < allIssues.length; n++) {
+            if (allIssues[n].labels.length === 0) tempArr.push(allIssues[n]);
+        }
+    } else {
+        for (n = 0; n < allIssues.length; n++) {
+            var commonArr = allIssues[n].labels.filter(function (o) {
+                return elmLabels.indexOf(o) !== -1;
+            });
+            if (commonArr.length > 0) {
+                tempArr.push(allIssues[n]);
+            }
+        }
+    }
+
+    // order them
+    if (elmOrder == dataOrderNameNewest) {
+        tempArr.sort(function (a, b) {
+            return new Date(b.edited) - new Date(a.edited);
+        });
+    } else if (elmOrder == dataOrderNameOldest) {
+        tempArr.sort(function (a, b) {
+            return new Date(a.edited) - new Date(b.edited);
+        });
+    }
+
+    var from = elmPage * ENTRIES_PER_VIEW;
+    var to = elmPage * ENTRIES_PER_VIEW + ENTRIES_PER_VIEW;
+    var result = tempArr.slice(from, to);
+    var resultHtml = '';
+    for (n = 0; n < result.length; n++) {
+        var labelsHtml = '<div class="labels">';
+        for (var p = 0; p < result[n].labels.length; p++) {
+            labelsHtml +=
+                '<span class="label-tag ' +
+                result[n].labels[p] +
+                '">' +
+                result[n].labels[p] +
+                '</span>';
+        }
+        labelsHtml += '</div>';
+        resultHtml +=
+            '<a href=#' +
+            result[n].number +
+            ' class="entry">' +
+            labelsHtml +
+            '<span class="result-title">' +
+            result[n].title +
+            '</a>';
+    }
+    elm.insertAdjacentHTML('beforeend', resultHtml);
+    var showMoreBtn = tempArr.slice(to, to + 1).length === 1;
+    console.log(tempArr);
 };
 
 var appendLabelClassesStyle = function () {

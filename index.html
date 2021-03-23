@@ -63,6 +63,7 @@
             var GITHUB_ACCEPTED_LABELS = ['approved'];
             var UNCATEGORIZED_LABEL = 'uncategorized-*';
             var ALL_LABEL = 'all-*';
+            var ENTRIES_PER_VIEW = 5;
             var MAX_PAGES = 40;
             var NUM_RESULTS_PER_PAGE = 30;
         </script>
@@ -96,8 +97,8 @@
                 <div class="col-12 results"></div>
             </div>
         </div>
-        <div class="container">
-            <div class="grid-wrapper content">
+        <div class="container content" id="js-content">
+            <div class="grid-wrapper">
                 <div class="col-4">
                     <h3>Popular</h3>
                     <div
@@ -110,24 +111,17 @@
                     <h3>Recent</h3>
                     <div
                         class="content-box"
-                        data-label="kickstarter popular"
-                        data-order="oldest"
+                        data-label="all-*"
+                        data-order="newest"
                     ></div>
                 </div>
                 <div class="col-4">
                     <h3>Shipping</h3>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Cras suscipit ultricies vehicula. Curabitur iaculis,
-                        risus vel egestas pellentesque, magna eros fermentum
-                        massa, et eleifend sapien purus id dui. Pellentesque
-                        consectetur imperdiet dui ac tristique. Nulla non
-                        egestas dui. Nulla semper diam est. Morbi tincidunt eros
-                        non nisi pretium vehicula. Integer semper vulputate sem
-                        eu molestie. Fusce aliquet viverra est, sit amet blandit
-                        nibh tristique commodo. Nulla eget elit in lacus luctus
-                        iaculis et in ipsum. Curabitur et consectetur sapien.
-                    </p>
+                    <div
+                        class="content-box"
+                        data-label="shipping"
+                        data-order="oldest"
+                    ></div>
                 </div>
             </div>
         </div>
