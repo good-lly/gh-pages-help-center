@@ -247,6 +247,44 @@ input[type='search'] {
     color: var(--c-search-placeholder);
     opacity: 0.6;
 }
+.results a {
+    display: block;
+    padding: 10px 20px;
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+    background: rgba(255, 255, 255, 0.1);
+    max-width: 100%;
+    font-weight: bold;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    border-radius: 1rem;
+    -webkit-transition: all 200ms ease;
+    transition: all 200ms ease;
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s;
+}
+.results a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+}
+.results h5 {
+    display: block;
+    padding: 10px 0;
+    color: white;
+    text-decoration: none;
+    margin: 5px 1rem;
+    margin-top: -10px;
+    font-size: 2rem;
+}
+@media screen and (min-width: 992px) {
+    .results a {
+        padding: 20px;
+        margin: 10px 0;
+    }
+}
+
 .content {
     margin-top: 110px;
 }

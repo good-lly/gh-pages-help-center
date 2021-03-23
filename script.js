@@ -15,6 +15,7 @@ var dataOrderNameOldest = 'oldest';
 var contentBoxClassName = 'content-box';
 var searchIdName = 'js-search';
 var searchBarName = 'js-search-bar';
+var searchResultsId = 'js-search-results';
 var contentName = 'js-content';
 var modalId = 'js-modal';
 var overlayId = 'js-overlay';
@@ -25,6 +26,18 @@ var modalCloseBtnId = 'js-modal-close';
 var page = 1;
 var allLabels = [];
 var allIssues = [];
+var timer;
+var fuse;
+var fuseOptions = {
+    includeScore: true,
+    keys: [
+        {
+            name: 'title',
+            weight: 2,
+        },
+        'body',
+    ],
+};
 var converter = new showdown.Converter();
 var fetchPage = function () {
     var xhr = new XMLHttpRequest();
@@ -56,6 +69,7 @@ var fetchPage = function () {
                 page++;
                 fetchPage();
             } else {
+                fuse = new Fuse(allIssues, fuseOptions);
                 appendLabelClassesStyle();
                 var elms = document.getElementsByClassName(contentBoxClassName);
                 for (m = 0; m < elms.length; m++) {
@@ -100,15 +114,41 @@ var addLabelsAndGetSanitzed = function (newLabels) {
 var openPage = function () {
     var location = window.location;
     var id = location.hash.split('#')[1];
+    var found = false;
     for (r = 0; r < allIssues.length; r++) {
         if (allIssues[r].number == id) {
             var title = document.getElementById(modalTitleId);
             title.innerHTML = allIssues[r].title;
             var bodyContent = document.getElementById(modalContentId);
             bodyContent.innerHTML = converter.makeHtml(allIssues[r].body);
+            found = true;
             openModal();
         }
     }
+    if (!found) {
+        closeModal();
+    }
+};
+var runSearch = function () {
+    var searchbar = document.getElementById(searchBarName);
+    var result = fuse.search(searchbar.value);
+    var entries = result.slice(0, 4);
+    console.warn(entries);
+    var resultsHtml = '';
+    if (entries.length > 0) {
+        for (s = 0; s < entries.length; s++) {
+            resultsHtml +=
+                '<a href=#' +
+                entries[s].item.number +
+                '><span class="result-title">' +
+                entries[s].item.title +
+                '</a>';
+        }
+    } else {
+        resultsHtml += '<h5>No results :(</h5>';
+    }
+    var searchResults = document.getElementById(searchResultsId);
+    searchResults.innerHTML = resultsHtml;
 };
 var ready = function () {
     var search = document.getElementById(searchIdName);
@@ -133,9 +173,9 @@ var ready = function () {
 
     function stickySearch() {
         if (window.pageYOffset >= sticky) {
-            search.setAttribute('class', stickyClass);
+            search.setAttribute('class', 'search ' + stickyClass);
         } else {
-            search.setAttribute('class', '');
+            search.setAttribute('class', 'search');
         }
     }
     window.onscroll = function () {
@@ -146,6 +186,20 @@ var ready = function () {
 
     var closeBtn = document.getElementById(modalCloseBtnId);
     closeBtn.addEventListener('click', closeModal, false);
+
+    searchbar.addEventListener('keyup', (event) => {
+        if (event.isComposing || event.keyCode === 229) {
+            return;
+        }
+        clearTimeout(timer);
+        timer = setTimeout(function () {
+            var term = searchbar.value;
+            var searchResults = document.getElementById(searchResultsId);
+            while (searchResults.firstChild)
+                searchResults.removeChild(searchResults.firstChild);
+            if (term) runSearch(term);
+        }, 300);
+    });
 
     window.addEventListener('hashchange', openPage, false);
 };
