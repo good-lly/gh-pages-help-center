@@ -16,9 +16,16 @@ var contentBoxClassName = 'content-box';
 var searchIdName = 'js-search';
 var searchBarName = 'js-search-bar';
 var contentName = 'js-content';
+var modalId = 'js-modal';
+var overlayId = 'js-overlay';
+var openClassName = 'open';
+var modalTitleId = 'js-modal-title';
+var modalContentId = 'js-modal-content';
+var modalCloseBtnId = 'js-modal-close';
 var page = 1;
 var allLabels = [];
 var allIssues = [];
+var converter = new showdown.Converter();
 var fetchPage = function () {
     var xhr = new XMLHttpRequest();
     xhr.onload = () => {
@@ -50,12 +57,12 @@ var fetchPage = function () {
                 fetchPage();
             } else {
                 appendLabelClassesStyle();
-                console.log('allIssues', allIssues);
                 var elms = document.getElementsByClassName(contentBoxClassName);
                 for (m = 0; m < elms.length; m++) {
                     var id = elms[m].getAttribute('id');
                     renderBoxContent(id);
                 }
+                openPage();
             }
         } catch (e) {
             console.error(e);
@@ -90,6 +97,19 @@ var addLabelsAndGetSanitzed = function (newLabels) {
     }
     return newVisibleLabels;
 };
+var openPage = function () {
+    var location = window.location;
+    var id = location.hash.split('#')[1];
+    for (r = 0; r < allIssues.length; r++) {
+        if (allIssues[r].number == id) {
+            var title = document.getElementById(modalTitleId);
+            title.innerHTML = allIssues[r].title;
+            var bodyContent = document.getElementById(modalContentId);
+            bodyContent.innerHTML = converter.makeHtml(allIssues[r].body);
+            openModal();
+        }
+    }
+};
 var ready = function () {
     var search = document.getElementById(searchIdName);
     var searchbar = document.getElementById(searchBarName);
@@ -113,14 +133,21 @@ var ready = function () {
 
     function stickySearch() {
         if (window.pageYOffset >= sticky) {
-            search.classList.add(stickyClass);
+            search.setAttribute('class', stickyClass);
         } else {
-            search.classList.remove(stickyClass);
+            search.setAttribute('class', '');
         }
     }
     window.onscroll = function () {
         stickySearch();
     };
+    var overlay = document.getElementById(overlayId);
+    overlay.addEventListener('click', closeModal, false);
+
+    var closeBtn = document.getElementById(modalCloseBtnId);
+    closeBtn.addEventListener('click', closeModal, false);
+
+    window.addEventListener('hashchange', openPage, false);
 };
 
 var getRandomInt = function (min, max) {
@@ -135,7 +162,6 @@ var renderBoxContent = function (id) {
     var elmLabels = elm.getAttribute(dataLabelName).split(' ');
     var elmOrder = elm.getAttribute(dataOrderName);
     var elmPage = elm.getAttribute(dataPageName);
-    console.log('render id ', id, elmLabels);
 
     // clear box - remove skeletons
     if (elmPage == 0) {
@@ -196,7 +222,22 @@ var renderBoxContent = function (id) {
     }
     elm.insertAdjacentHTML('beforeend', resultHtml);
     var showMoreBtn = tempArr.slice(to, to + 1).length === 1;
-    console.log(tempArr);
+};
+
+var openModal = function () {
+    var modal = document.getElementById(modalId);
+    var overlay = document.getElementById(overlayId);
+    modal.setAttribute('class', 'modal open');
+    overlay.setAttribute('class', 'overlay open');
+};
+
+var closeModal = function () {
+    var modal = document.getElementById(modalId);
+    var overlay = document.getElementById(overlayId);
+    modal.setAttribute('class', 'modal');
+    overlay.setAttribute('class', 'overlay');
+    var clearUrl = window.location.href.split('#')[0];
+    history.replaceState(null, null, clearUrl);
 };
 
 var appendLabelClassesStyle = function () {

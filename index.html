@@ -68,6 +68,9 @@
             var NUM_RESULTS_PER_PAGE = 30;
         </script>
         <link rel="stylesheet" href="style.css" />
+        <script src="https://cdn.jsdelivr.net/npm/fuse.js/dist/fuse.js"></script>
+
+        <script src="https://unpkg.com/showdown/dist/showdown.min.js"></script>
         <script src="script.js"></script>
     </head>
     <body>
@@ -123,6 +126,16 @@
                         data-order="oldest"
                     ></div>
                 </div>
+            </div>
+        </div>
+        <div class="overlay" id="js-overlay"></div>
+        <div class="modal" id="js-modal">
+            <div class="modal-close" id="js-modal-close">&#x2715;</div>
+            <h3 class="modal-title" id="js-modal-title"></h3>
+            <div class="modal-content" id="js-modal-content"></div>
+            <div class="modal-footer">
+                <!-- <span>Didn't find the answer?</span>
+                <span class="modal-chat-btn" id="js-letschat">Ask us</span> -->
             </div>
         </div>
     </body>
