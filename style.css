@@ -176,12 +176,28 @@ input[type='search'] {
     overflow-x: hidden;
     box-shadow: rgb(127, 130, 133) 0px 0px 10px;
     z-index: 1;
+    width: 100%;
+    transition: all 0.5s ease;
 }
+.search.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    padding: 5px 0 5px 0;
+}
+.search.sticky h1 {
+    transform: translateY(-100%);
+    font-size: 0;
+    opacity: 0;
+}
+
 .search h1 {
     font-size: 2rem;
     color: var(--c-search-headline);
     opacity: 0.9;
     padding: 0;
+    transform: translateY(0%);
+    transition: all 0.3s ease;
 }
 @media screen and (min-width: 992px) {
     .search h1 {
@@ -206,7 +222,14 @@ input[type='search'] {
     background-position: 0px 6px;
     background-repeat: no-repeat;
     padding-left: 2.4rem;
+    transition: all 0.3s ease;
 }
+.search.sticky .search-bar {
+    font-size: 1.5rem;
+    padding-left: 1.6rem;
+    background-size: 6rem;
+}
+
 @media screen and (min-width: 992px) {
     .search-bar {
         font-size: 4rem;
