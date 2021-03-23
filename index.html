@@ -35,16 +35,35 @@
                 --c-search-headline: #ffffff;
                 --c-search-placeholder: #ffffff;
                 --c-search-text: #4043c1;
+                --g-search-gradient: linear-gradient(
+                    125deg,
+                    rgba(245, 142, 101, 1) 10%,
+                    rgba(113, 71, 155, 1) 70%,
+                    rgba(4, 40, 142, 1) 150%
+                );
+                --g-moz-search-gradient: -moz-linear-gradient(
+                    125deg,
+                    rgba(245, 142, 101, 1) 10%,
+                    rgba(113, 71, 155, 1) 70%,
+                    rgba(4, 40, 142, 1) 150%
+                );
+                --g-webkit-search-gradient: -webkit-linear-gradient(
+                    125deg,
+                    rgba(245, 142, 101, 1) 10%,
+                    rgba(113, 71, 155, 1) 70%,
+                    rgba(4, 40, 142, 1) 150%
+                );
+                --c-search-bg-fallback: rgb(245, 142, 101);
             }
         </style>
         <script>
             var GITHUB_ISSUES_LINK =
                 'https://api.github.com/repos/sentienhq/Sentien-FAQ-db/issues';
-            var GITHUB_ACCEPTED_EDITORS = ['good_lly'];
+            var GITHUB_ACCEPTED_CREATORS = ['good_lly', 'sarakuperminc'];
             var GITHUB_ACCEPTED_LABELS = ['approved'];
             var UNCATEGORIZED_LABEL = 'uncategorized-*';
             var ALL_LABEL = 'all-*';
-            var MAX_PAGES = 20;
+            var MAX_PAGES = 40;
             var NUM_RESULTS_PER_PAGE = 30;
         </script>
         <link rel="stylesheet" href="style.css" />

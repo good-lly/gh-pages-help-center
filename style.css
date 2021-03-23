@@ -155,24 +155,10 @@ input[type='search'] {
     display: block;
     position: relative;
     padding: 10px 0 20px 0;
-    background: -moz-linear-gradient(
-        125deg,
-        rgba(245, 142, 101, 1) 10%,
-        rgba(113, 71, 155, 1) 70%,
-        rgba(4, 40, 142, 1) 150%
-    );
-    background: -webkit-linear-gradient(
-        125deg,
-        rgba(245, 142, 101, 1) 10%,
-        rgba(113, 71, 155, 1) 70%,
-        rgba(4, 40, 142, 1) 150%
-    );
-    background: linear-gradient(
-        125deg,
-        rgba(245, 142, 101, 1) 10%,
-        rgba(113, 71, 155, 1) 70%,
-        rgba(4, 40, 142, 1) 150%
-    );
+    background: var(--c-search-bg-fallback);
+    background: var(--g-moz-search-gradient);
+    background: var(--g-webkit-search-gradient);
+    background: var(--g-search-gradient);
     overflow-x: hidden;
     box-shadow: rgb(127, 130, 133) 0px 0px 10px;
     z-index: 1;
