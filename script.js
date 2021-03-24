@@ -260,7 +260,8 @@ var renderBoxContent = function (id) {
     var result = tempArr.slice(from, to);
     var resultHtml = '';
     for (n = 0; n < result.length; n++) {
-        var labelsHtml = '<div class="labels">';
+        var hasLabels = result[n].labels.length > 0;
+        var labelsHtml = hasLabels ? '<div class="labels">' : '<div>';
         for (var p = 0; p < result[n].labels.length; p++) {
             labelsHtml +=
                 '<span class="label-tag ' +
