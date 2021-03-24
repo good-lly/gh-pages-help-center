@@ -29,3 +29,5 @@ Well, I want to convince my teammates that 99% of all problems are possible to s
 Also we wanted to launch some simple FAQ but the most 3rd party tools are just limiting and cost us $$$. So, why not?
 
 ## 👨‍🏫 Demo time
+
+1. https://good-lly.github.io/gh-pages-help-center/
