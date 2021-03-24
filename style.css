@@ -18,6 +18,10 @@ body {
     text-rendering: optimizeLegibility;
     line-height: 1.5;
 }
+html,
+body {
+    background-color: var(--c-body-background);
+}
 
 a:not([class]) {
     text-decoration-skip-ink: auto;
@@ -161,7 +165,7 @@ input[type='search'] {
     background: var(--g-webkit-search-gradient);
     background: var(--g-search-gradient);
     overflow-x: hidden;
-    box-shadow: rgb(127, 130, 133) 0px 0px 10px;
+    box-shadow: var(--c-search-boxshadow);
     z-index: 1;
     width: 100%;
     transition: all 0.5s ease;
@@ -217,6 +221,7 @@ input[type='search'] {
     background-repeat: no-repeat;
     padding-left: 2.4rem;
     transition: all 0.3s ease;
+
     will-change: transform;
 }
 .search.sticky .search-bar {
@@ -243,6 +248,9 @@ input[type='search'] {
 .search-bar::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: var(--c-search-placeholder);
+    background: -webkit-linear-gradient(45deg, #380036, #0cbaba 80%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     opacity: 0.6; /* Firefox */
 }
 
