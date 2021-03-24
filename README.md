@@ -17,3 +17,15 @@ Feel free to customize by visual identity of your preference .)
 To update `<head>` of your Help Center is recommended to follow [HEAD - A list of everything that _could_ go in the head of your document ](https://github.com/joshbuchea/HEAD)
 
 Inspired by [Githu Pages URL shortener](https://github.com/nelsontky/gh-pages-url-shortener/).
+
+## 💪 Motivation
+
+Well, I want to convince my teammates that 99% of all problems are possible to solve via GIT (or GitHub)
+
+> "See, I told You! Github!"
+>
+> -   Peter
+
+Also we wanted to launch some simple FAQ but the most 3rd party tools are just limiting and cost us $$$. So, why not?
+
+## 👨‍🏫 Demo time
