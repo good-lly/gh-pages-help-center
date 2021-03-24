@@ -265,7 +265,7 @@ var renderBoxContent = function (id) {
         for (var p = 0; p < result[n].labels.length; p++) {
             labelsHtml +=
                 '<span class="label-tag ' +
-                result[n].labels[p] +
+                result[n].labels[p].split(' ').join('') +
                 '">' +
                 result[n].labels[p] +
                 '</span>';
@@ -328,7 +328,7 @@ var appendLabelClassesStyle = function () {
         tempStyleContent =
             tempStyleContent +
             ' .' +
-            allLabels[l].labelName +
+            allLabels[l].labelName.split(' ').join('') +
             ' { background-color: #' +
             allLabels[l].labelColor +
             '; }';

@@ -433,6 +433,12 @@ input[type='search'] {
     max-width: 100%;
     font-size: 0.9rem;
 }
+.modal-content code {
+    display: block;
+    max-width: 100%;
+    white-space: pre-line;
+    word-break: break-all;
+}
 .modal-footer {
     border-top: 1px solid #ccc;
     margin-top: 15px;

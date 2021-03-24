@@ -24,10 +24,10 @@ Well, I want to convince my teammates that 99% of all problems are possible to s
 
 > "See, I told You! Github!"
 >
-> -   Peter
+> _-- Peter_
 
 Also we wanted to launch some simple FAQ but the most 3rd party tools are just limiting and cost us $$$. So, why not?
 
 ## 👨‍🏫 Demo time
 
-1. https://good-lly.github.io/gh-pages-help-center/
+1. https://good-lly.github.io/gh-pages-help-center/ or you can take a look on our [project help center](https://sentienhq.com/help/)
