@@ -21,17 +21,17 @@ Inspired by [Githu Pages URL shortener](https://github.com/nelsontky/gh-pages-ur
 
 ## 💪 Motivation
 
-Well, I want to convince my teammates that 99 global problems are possible to solve via GIT (or GitHub in this case)
+Well, I want to convince my teammates that 99 global problems are possible to solve with GIT (or GitHub in this case)
 
 > "See, I told You! Github!"
 >
-> _-- Peter_
+> _-- Me_
 
-Also we wanted to launch some simple FAQ but the most 3rd party tools are just limiting and cost us $$$. So, why not?
+Also we wanted to launch some simple FAQ, with review process and team access but the most 3rd party tools are just limiting and cost us $$$. So, why not?
 
 ## 👨‍🏫 Demo time
 
-[Here is a living example](sentienhq.com/help/) which we use on our own project & this is [(self-)help demo](https://good-lly.github.io/gh-pages-help-center/) 🤔 of this project that might help you.
+[Here is a living example](sentienhq.com/help/) which we use on our own project & this is [(?self-)help demo](https://good-lly.github.io/gh-pages-help-center/) 🤔 of this project that might help you.
 
 ## ☕ Features
 
@@ -46,8 +46,19 @@ Also we wanted to launch some simple FAQ but the most 3rd party tools are just l
 5. [Look ma, the DARK MODE!!! 🌙](https://good-lly.github.io/gh-pages-help-center/index_dark.html)
 
 Please note there maybe still a [few issues!](https://github.com/good-lly/gh-pages-help-center/issues/4) Also for a full-featured help center experience, I do recommend you implement some live chat option. QAs are not enough sometimes. It also brings value to you - when you talk to customers! [thanks-captain-obvious.gif]
+Here is a short list of a few Live chat tools (no recommendations):
 
-## ⚙️ Easy setup
+-   zoho.com/desk
+-   helpscout.com
+-   purechat.com
+-   userlike.com
+-   olark.com
+-   zendesk.com
+-   intercom.com
+-   freshchat.com
+-   and list can goes on ...
+
+## ⚙️ But how? Easy!
 
 I have extracted all important variables inside `index.html` file. So all you have to edit to make it work is there.
 
@@ -106,4 +117,4 @@ For example
 ></div>
 ```
 
-7. That's it! have fun! 🥳
+7. That's it! Have fun! 🥳
