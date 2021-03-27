@@ -7,6 +7,9 @@
 
 This is a minimalistic responsive Help Center hosted on GitHub pages written in vanilla JS. It does not need the maintenance of any servers or databases and can be hosted entirely on ❤️ GitHub for free!
 
+preview:
+![example](https://user-images.githubusercontent.com/1671375/112711444-bf5bcd00-8ec8-11eb-8880-d2a35ef4b48c.gif)
+
 Includes a very few dependencies:
 
 -   [Fuse.js](https://fusejs.io/) for better fuzzy search
