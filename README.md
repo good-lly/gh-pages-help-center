@@ -3,7 +3,7 @@
 ![GitHub stars](https://img.shields.io/github/stars/good-lly/gh-pages-help-center?style=social)
 ![Contributions welcome](https://img.shields.io/badge/contributions-welcome-orange.svg)
 
-# 💡 Minimalistic FAQ/Help Center hosted on GitHub Pages
+# 💡 Simple FAQ/Help Center hosted on GitHub Pages
 
 This is a minimalistic responsive Help Center hosted on GitHub pages written in vanilla JS. It does not need the maintenance of any servers or databases and can be hosted entirely on ❤️ GitHub for free!
 
@@ -60,7 +60,7 @@ Here is a short list of a few Live chat tools (no recommendations):
 -   zendesk.com
 -   intercom.com
 -   freshchat.com
--   and list can goes on ...
+-   and so on ...
 
 ## ⚙️ But how? Easy!
 
