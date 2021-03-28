@@ -35,7 +35,7 @@ Also we wanted to launch some simple FAQ, with review process and team access bu
 
 ## 👨‍🏫 Demo time
 
-[Here is a living example](sentienhq.com/help/) which we use on our own project & this is [(?self-)help demo](https://good-lly.github.io/gh-pages-help-center/) 🤔 of this project that might help you.
+[Here is a living example](https://sentienhq.com/help/) which we use on our own project & this is [(?self-)help demo](https://good-lly.github.io/gh-pages-help-center/) 🤔 of this project that might help you.
 
 ## ☕ Features
 
